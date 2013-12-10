@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+# Weighted hash distribution demo
+
+def usage
+  puts <<-USAGE
+weighted_hash_dist [options] '{key1: weight1, key2: weight2, group1: { key3: weight3, key4: weight4 }'
+
+options:
+  [default] - randomly emits 1 weighted sample
+  -r[num],--runs=[num] - runs [num] times and emits [num] samples
+  --histogran - emits a graphed histogram (use a large value of runs, e.g. 1_000_000 or more)
+USAGE
+end
