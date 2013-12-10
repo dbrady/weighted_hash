@@ -14,7 +14,7 @@ describe WeightedHash do
     its(:total_weight) { should == 5.0 }
     its(:probabilities) { should == {a: 5.0} }
     its(:scalars) { should == {a: 5.0} }
-    # its(:sample) { should eq(:a) }
+    its(:sample) { should eq(:a) }
   end
 
   context "with multiple probabilities" do
@@ -111,9 +111,6 @@ describe WeightedHash do
     let(:hash3) { WeightedHash.new({a: {b: 1, c: 2}, d: { e: 4, f: 6 }}) }
     let(:hash4) { WeightedHash.new({g: {h: 3, i: 0}, d: { e: 5, j: 2 }}) }
     let(:sum34) { WeightedHash.new({a: {b: 1, c: 2}, d: { e: 9, f: 6, j: 2 }, g: {h: 3, i: 0}}) }
-
-    # let(:hash3) { ...hash with 2 nests }
-    # let(:hash4) { ...hash with 2 nests, one of which matches hash3 }
 
     it { (hash1 + hash2).should == sum12 }
     it { (hash3 + hash4).should == sum34 }
